@@ -45,11 +45,12 @@
 
       def set(key, value)
         @map.each do |pair|
-            if pair[0] == key  
+            if pair[0] == key
                 pair[1] = value
+                return
             end
-        end            
-        @map << [key, value]
+        end
+        @map << [key, value]           
       end
 
       def get(key)

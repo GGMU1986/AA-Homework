@@ -27,8 +27,10 @@ class Board
   def make_move(start_pos, current_player_name)
     length = @cups[start_pos].length 
     @cups[start_pos] = []
-    @cups.each do |cup|
-      cup << :stone
+    i = start_pos % 14
+    while i < length
+
+    end
     end
   end
 

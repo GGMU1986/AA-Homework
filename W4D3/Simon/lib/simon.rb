@@ -12,29 +12,44 @@ class Simon
   def play
     until game_over
       take_turn
+      system("clear")
     end
+
     game_over_message
     reset_game
   end
 
   def take_turn
-    add_random_color
+    
     show_sequence
-    if require_sequence
-      add_random_color
+    require_sequence
+    
+    unless game_over
       round_success_message
-    else
-      game_over = false
+      @sequence_length += 1
     end
   end
 
   def show_sequence
-    puts seq.join(" ")
+    add_random_color
+    @seq.each do |col|
+      puts col
+      sleep 0.75
+      system("clear")
+      sleep 0.25
+    end
   end
 
   def require_sequence
-    puts "Please choose a color: "
-    guess = gets.chomp
+    puts "Please repeat the sequence one color at a time: "
+    @seq.each do |col|
+      guess = gets.chomp
+      if col.upcase != guess
+        game_over = true
+        break
+      end
+    end
+    sleep 0.25
   end
 
   def add_random_color
@@ -46,6 +61,7 @@ class Simon
   end
 
   def game_over_message
+    puts "You made it to #{sequence_length - 1} rounds" 
     puts "You've disgraced your family. BE GONE!"
   end
 

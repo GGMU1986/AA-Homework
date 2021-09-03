@@ -23,8 +23,7 @@ def dominant_octopus(arr)
     left_sorted = dominant_octopus(arr.take(mid))
     right_sorted = dominant_octopus(arr.drop(mid))
 
-    merge(left_sorted, right_sorted)
-    arr.last
+    merge(left_sorted, right_sorted).last 
 end
 
 def merge(left, right)

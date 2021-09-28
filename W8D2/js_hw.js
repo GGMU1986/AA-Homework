@@ -7,19 +7,49 @@
 //     console.log(x);
 // }
 
-function mysteryScoping1() {
-    var x = 'out of block';
-    if (true) {
-        var x = 'in block';
-        console.log(x);
+// function mysteryScoping1() {
+//     var x = 'out of block';
+//     if (true) {
+//         var x = 'in block';
+//         console.log(x);
+//     }
+//     console.log(x);
+// }
+
+// mysteryScoping1();
+
+// function madLib(verb, adj, noun) {
+//     return 'We shall ${verb.toUpperCase()} the ${adj.toUpperCase()} ${noun.toUpperCase()}.'
+// }
+
+// madLib('jump', 'magically', 'high')
+
+function isPrime(n) {
+    if (n < 2) { return false; }
+
+    for (let i = 2; i < n; i++) {
+        if (n % i === 0) {
+            return false;
+        }
     }
-    console.log(x);
+
+    return true;
 }
 
-mysteryScoping1();
+function sumOfNPrimes(n) {
+    let sum = 0;
+    let countPrimes = 0;
+    let i = 2;
 
-function madLib(verb, adj, noun) {
-    return 'We shall ${verb.toUpperCase()} the ${adj.toUpperCase()} ${noun.toUpperCase()}.'
+    while (countPrimes < n) {
+        if (isPrime(i)) {
+            sum += i;
+            countPrimes++;
+        }
+        i++;
+    }
+
+    return sum;
 }
 
-madLib('jump', 'magically', 'high')
+console.log(sumOfNPrimes(2))

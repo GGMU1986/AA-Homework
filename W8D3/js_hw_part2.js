@@ -26,15 +26,30 @@ Elephant.prototype.grow = function () {
     this.height += 12;
 };
 
-// Elephant.prototype.addTrick(trick) = function() {
-//     this.tricks.push(trick)
-// }
+Elephant.prototype.addTrick(trick) = function() {
+    this.tricks.push(trick)
+}
 
 // Elephant.prototype.play = function() {
 //     randomTrick = this.tricks[Math.floor(Math.random() * this.tricks.length)];
 //     console.log(randomTrick);
 // }
 
-console.log(joey.height)
-joey.grow()
-console.log(joey.height)
+console.log(joey.tricks)
+joey.addTrick('juggling bowling pins')
+console.log(joey.tricks)
+
+const readline = require('readline'); 
+
+const reader = readline.createInterface({ 
+    input: process.stdin, 
+    output: process.stdout 
+}); 
+
+function teaAndBiscuits() { 
+    reader.question('Would you like some tea?', function (res) { console.log(`You replied ${res}.`); 
+    reader.question('Would you like some biscuits?', function (res2) { console.log(`You replied ${res2}.`); 
+    const first = (res === 'yes') ? 'do' : 'don\'t'; 
+    const second = (res2 === 'yes') ? 'do' : 'don\'t'; console.log(`So you ${first} want tea and you ${second} want biscuits.`); 
+    reader.close(); }); }); }
+

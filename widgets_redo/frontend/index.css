@@ -8,13 +8,13 @@ body {
 
 h1 {
     position: relative;
-    left: 180px;
+    left: 280px;
 }
 
 .time {
     border: 2px solid black;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
     background-color: pink;
 }
 
@@ -22,4 +22,18 @@ h1 {
     display: flex;
     justify-content: space-between;
     margin: 10px 20px 20px 10px
+}
+
+.weather {
+    border: 2px solid black;
+    height: 150px;
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color:greenyellow;
+}
+
+.weather p {
+    font-size: inherit;
+    text-align: center;
+    font-size: 40px;
 }

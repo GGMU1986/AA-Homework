@@ -14,4 +14,4 @@ function MyInfo() {
     )
 }
 
-export default MyInfo;
+//export default MyInfo;

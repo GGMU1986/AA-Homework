@@ -1,0 +1,9 @@
+#george {
+    border: 2px solid green;
+    background-color: black;
+    color: blanchedalmond;
+    font-family: 'Courier New', Courier, monospace;
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+}

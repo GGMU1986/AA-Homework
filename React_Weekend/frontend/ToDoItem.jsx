@@ -1,14 +1,22 @@
 import React from 'react';
 
-function ToDoItem() {
+function handleChange() {
+    console.log("change")
+}
+
+function ToDoItem(props) {
     return (
         <form action="">
-            <input type="checkbox" id="market"/>
-            <label htmlFor="market">PlaceHolder text here</label>
-
+            <input 
+                onChange={handleChange}
+                type="checkbox" 
+                id="market"
+                checked={props.item.complete}    
+            />
+            <label htmlFor="market">{props.item.text}</label>
             <br/><br/>
         </form>
     )
 }
 
-//export default ToDoItem;
+export default ToDoItem;

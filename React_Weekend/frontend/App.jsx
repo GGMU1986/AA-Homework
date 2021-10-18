@@ -1,18 +1,36 @@
-import React from 'react';
-import Products from './Products';
-//import ContactCard from './ContactCard';
-//import ToDoItem from './ToDoItem';
+import React, {Component} from 'react';
+// import ToDoItem from './ToDoItem';
+// import todoData from './reactdata';
 
-//import MyInfo from "./MyInfo";
-//import Footer from "./Footer";
-//import Header from "./Header";
+class App extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            count: 0
+        }
+        this.handleClick = this.handleClick.bind(this);
+    }
+  
+    handleClick() {
+        this.setState(prevState => {
+            return {
+                count: prevState.count + 1 
+            }
+        })
+    }
 
-function App() {
-    return (
-        <div>
-             
-        </div>
-    )
+    render() {
+        // const todoComps = this.state.todos.map(thing => <ToDoItem key={thing.id} item={thing} />)
+        return (
+            <div>
+                <h1>{this.state.count}</h1>
+                <button onClick={this.handleClick}>Change!</button>
+            </div>
+        //     <div>
+        //         {todoComps}
+        //     </div>
+        )
+    }
 }
 
 export default App;
